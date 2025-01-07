@@ -31,13 +31,6 @@ const polyfills = [
   },
 ];
 
-const assets = [
-  {
-    from: "public",
-    to: "public",
-  },
-];
-
 const plugins = [
   new CleanWebpackPlugin(["dist"]),
   new webpack.ProgressPlugin(),
@@ -50,7 +43,7 @@ const plugins = [
       minifyJS: true,
     },
   }),
-  new CopyWebpackPlugin([...polyfills, ...assets], {
+  new CopyWebpackPlugin([...polyfills], {
     ignore: [".DS_Store"],
   }),
 ];
